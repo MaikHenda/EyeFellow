@@ -54,7 +54,7 @@ namespace KinectV2Sesh
                 bodyFrameReader.FrameArrived += Reader_FrameArrived;
             }
         }
-
+        //Detecting bodies
         private void Reader_FrameArrived(object sender, BodyFrameArrivedEventArgs e)
         {
             bool dataReceived = false;
@@ -71,7 +71,7 @@ namespace KinectV2Sesh
                     dataReceived = true;
                 }
             }
-
+            //Control of cursor based on user coordinates
             if (dataReceived)
             {
                 foreach (Body body in bodies)
@@ -106,7 +106,7 @@ namespace KinectV2Sesh
         {
             panel1.Invalidate();
         }
-
+        //Drawing The eye based on the cursorposition
         void panel1_Paint(object sender, PaintEventArgs e)
         {
             Point center = new Point(panel1.ClientSize.Width / 2, panel1.ClientSize.Height / 2);
