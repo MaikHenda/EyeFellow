@@ -1,0 +1,20 @@
+C:\Users\maikh\source\repos\POCEyes\POCEyes\bin\Debug\POCEyes.exe.config
+C:\Users\maikh\source\repos\POCEyes\POCEyes\bin\Debug\POCEyes.exe
+C:\Users\maikh\source\repos\POCEyes\POCEyes\bin\Debug\POCEyes.pdb
+C:\Users\maikh\source\repos\POCEyes\POCEyes\obj\Debug\POCEyes.csprojAssemblyReference.cache
+C:\Users\maikh\source\repos\POCEyes\POCEyes\obj\Debug\POCEyes.Form1.resources
+C:\Users\maikh\source\repos\POCEyes\POCEyes\obj\Debug\POCEyes.Properties.Resources.resources
+C:\Users\maikh\source\repos\POCEyes\POCEyes\obj\Debug\POCEyes.csproj.GenerateResource.cache
+C:\Users\maikh\source\repos\POCEyes\POCEyes\obj\Debug\POCEyes.csproj.CoreCompileInputs.cache
+C:\Users\maikh\source\repos\POCEyes\POCEyes\obj\Debug\POCEyes.exe
+C:\Users\maikh\source\repos\POCEyes\POCEyes\obj\Debug\POCEyes.pdb
+C:\Users\Maik\OneDrive - Office 365 Fontys\Media Semester 3 20202021\EyeFoLo\POC's\POCEye Follows Cursor\POCEyes\POCEyes\bin\Debug\POCEyes.exe.config
+C:\Users\Maik\OneDrive - Office 365 Fontys\Media Semester 3 20202021\EyeFoLo\POC's\POCEye Follows Cursor\POCEyes\POCEyes\bin\Debug\POCEyes.exe
+C:\Users\Maik\OneDrive - Office 365 Fontys\Media Semester 3 20202021\EyeFoLo\POC's\POCEye Follows Cursor\POCEyes\POCEyes\bin\Debug\POCEyes.pdb
+C:\Users\Maik\OneDrive - Office 365 Fontys\Media Semester 3 20202021\EyeFoLo\POC's\POCEye Follows Cursor\POCEyes\POCEyes\obj\Debug\POCEyes.csprojAssemblyReference.cache
+C:\Users\Maik\OneDrive - Office 365 Fontys\Media Semester 3 20202021\EyeFoLo\POC's\POCEye Follows Cursor\POCEyes\POCEyes\obj\Debug\POCEyes.Form1.resources
+C:\Users\Maik\OneDrive - Office 365 Fontys\Media Semester 3 20202021\EyeFoLo\POC's\POCEye Follows Cursor\POCEyes\POCEyes\obj\Debug\POCEyes.Properties.Resources.resources
+C:\Users\Maik\OneDrive - Office 365 Fontys\Media Semester 3 20202021\EyeFoLo\POC's\POCEye Follows Cursor\POCEyes\POCEyes\obj\Debug\POCEyes.csproj.GenerateResource.cache
+C:\Users\Maik\OneDrive - Office 365 Fontys\Media Semester 3 20202021\EyeFoLo\POC's\POCEye Follows Cursor\POCEyes\POCEyes\obj\Debug\POCEyes.csproj.CoreCompileInputs.cache
+C:\Users\Maik\OneDrive - Office 365 Fontys\Media Semester 3 20202021\EyeFoLo\POC's\POCEye Follows Cursor\POCEyes\POCEyes\obj\Debug\POCEyes.exe
+C:\Users\Maik\OneDrive - Office 365 Fontys\Media Semester 3 20202021\EyeFoLo\POC's\POCEye Follows Cursor\POCEyes\POCEyes\obj\Debug\POCEyes.pdb
