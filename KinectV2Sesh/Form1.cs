@@ -122,6 +122,25 @@ namespace KinectV2Sesh
             double angleLeft = getAngleInDegrees(LeftEyeCenter.X, LeftEyeCenter.Y, curPos.X, curPos.Y);
 
             rc = new Rectangle(new Point(Math.Min((int)DistanceFromLeftEyeToCursor, EyeBallRadius - PupilRadius), 0), new Size(1, 1));
+            if((int.Parse(txtMidSpineZ.Text) > 10) && (int.Parse(txtMidSpineZ.Text) < 30)) {
+                rc.Inflate((int)(PupilRadius * 1.1), (int)(PupilRadius * 1.1));
+            }
+            else if ((int.Parse(txtMidSpineZ.Text) > 30) && (int.Parse(txtMidSpineZ.Text) < 50))
+            {
+                rc.Inflate((int)(PupilRadius * 1.2), (int)(PupilRadius * 1.2));
+            }
+            else if ((int.Parse(txtMidSpineZ.Text) > 50) && (int.Parse(txtMidSpineZ.Text) < 80))
+            {
+                rc.Inflate((int)(PupilRadius * 1.3), (int)(PupilRadius * 1.3));
+            }
+            else if ((int.Parse(txtMidSpineZ.Text) > 80) && (int.Parse(txtMidSpineZ.Text) < 110))
+            {
+                rc.Inflate((int)(PupilRadius * 1.4), (int)(PupilRadius * 1.4));
+            }
+            else
+            {
+                rc.Inflate((int)(PupilRadius * 1.5), (int)(PupilRadius * 1.5));
+            }
             rc.Inflate(PupilRadius, PupilRadius);
             e.Graphics.TranslateTransform(LeftEyeCenter.X, LeftEyeCenter.Y);
             e.Graphics.RotateTransform((float)angleLeft);
