@@ -20,7 +20,7 @@ namespace KinectV2Sesh
         //Eye related
         private Timer tmr;
         private int PupilRadius = 80;
-        private int EyeBallRadius = 400;
+        private int EyeBallRadius = 480;
         private int DistanceBetweenEyes = 0;
 
         public Form1()
@@ -172,6 +172,11 @@ namespace KinectV2Sesh
         }
 
         private void Form1_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
         {
 
         }

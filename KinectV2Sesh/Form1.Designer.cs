@@ -46,6 +46,7 @@
             this.txtMidSpineX.Name = "txtMidSpineX";
             this.txtMidSpineX.Size = new System.Drawing.Size(100, 20);
             this.txtMidSpineX.TabIndex = 0;
+            this.txtMidSpineX.Visible = false;
             // 
             // txtMidSpineY
             // 
@@ -53,6 +54,7 @@
             this.txtMidSpineY.Name = "txtMidSpineY";
             this.txtMidSpineY.Size = new System.Drawing.Size(100, 20);
             this.txtMidSpineY.TabIndex = 1;
+            this.txtMidSpineY.Visible = false;
             // 
             // txtMidSpineZ
             // 
@@ -60,6 +62,7 @@
             this.txtMidSpineZ.Name = "txtMidSpineZ";
             this.txtMidSpineZ.Size = new System.Drawing.Size(100, 20);
             this.txtMidSpineZ.TabIndex = 2;
+            this.txtMidSpineZ.WordWrap = false;
             // 
             // label1
             // 
@@ -69,6 +72,7 @@
             this.label1.Size = new System.Drawing.Size(45, 13);
             this.label1.TabIndex = 3;
             this.label1.Text = "Coord X";
+            this.label1.Visible = false;
             // 
             // label2
             // 
@@ -78,6 +82,7 @@
             this.label2.Size = new System.Drawing.Size(45, 13);
             this.label2.TabIndex = 3;
             this.label2.Text = "Coord Y";
+            this.label2.Visible = false;
             // 
             // label3
             // 
@@ -87,12 +92,13 @@
             this.label3.Size = new System.Drawing.Size(45, 13);
             this.label3.TabIndex = 3;
             this.label3.Text = "Coord Z";
+            this.label3.Visible = false;
             // 
             // panel1
             // 
-            this.panel1.Location = new System.Drawing.Point(380, 112);
+            this.panel1.Location = new System.Drawing.Point(380, 2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1926, 923);
+            this.panel1.Size = new System.Drawing.Size(1926, 1033);
             this.panel1.TabIndex = 4;
             // 
             // tbDisX
@@ -101,6 +107,8 @@
             this.tbDisX.Name = "tbDisX";
             this.tbDisX.Size = new System.Drawing.Size(100, 20);
             this.tbDisX.TabIndex = 5;
+            this.tbDisX.Visible = false;
+            this.tbDisX.WordWrap = false;
             // 
             // tbDisY
             // 
@@ -117,6 +125,7 @@
             this.label4.Size = new System.Drawing.Size(76, 13);
             this.label4.TabIndex = 6;
             this.label4.Text = "SchermCoords";
+            this.label4.Visible = false;
             // 
             // Form1
             // 
@@ -124,8 +133,6 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1924, 1061);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.tbDisX);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
@@ -134,6 +141,8 @@
             this.Controls.Add(this.txtMidSpineY);
             this.Controls.Add(this.txtMidSpineX);
             this.Controls.Add(this.tbDisY);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.tbDisX);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Form1";
             this.Text = "Form1";
