@@ -20,13 +20,13 @@ namespace KinectV2Sesh
         //Eye related
         private Timer tmr;
         private int PupilRadius = 80;
-        private int EyeBallRadius = 480;
-        private int DistanceBetweenEyes = 0;
+        private int EyeBallRadius = 500;
+        private int DistanceBetweenEyes = -50;
 
         public Form1()
         {
             InitializeComponent();
-            this.panel1.Paint += panel1_Paint;
+            this.pictureBox1.Paint += pictureBox1_Paint;
 
             tmr = new Timer();
             tmr.Interval = 100;
@@ -104,43 +104,25 @@ namespace KinectV2Sesh
         }
         void tmr_Tick(object sender, EventArgs e)
         {
-            panel1.Invalidate();
+            pictureBox1.Invalidate();
         }
 
-        void panel1_Paint(object sender, PaintEventArgs e)
+        void pictureBox1_Paint(object sender, PaintEventArgs e)
         {
-            Point center = new Point(panel1.ClientSize.Width / 2, panel1.ClientSize.Height / 2);
-            Point LeftEyeCenter = new Point(center.X - EyeBallRadius - (DistanceBetweenEyes / 2), center.Y);
+            Point center = new Point((int)(pictureBox1.ClientSize.Width / 1.1450), pictureBox1.ClientSize.Height / 2);
+            Point LeftEyeCenter = new Point(center.X - EyeBallRadius - (DistanceBetweenEyes / 1), center.Y);
 
 
             Rectangle rc = new Rectangle(LeftEyeCenter, new Size(1, 1));
             rc.Inflate(EyeBallRadius, EyeBallRadius);
-            e.Graphics.DrawEllipse(Pens.Black, rc);
+            //e.Graphics.DrawEllipse(Pens.Black, rc);
 
-            Point curPos = panel1.PointToClient(Cursor.Position);
+            Point curPos = pictureBox1.PointToClient(Cursor.Position);
             Double DistanceFromLeftEyeToCursor = getDistance(LeftEyeCenter.X, LeftEyeCenter.Y, curPos.X, curPos.Y);
             double angleLeft = getAngleInDegrees(LeftEyeCenter.X, LeftEyeCenter.Y, curPos.X, curPos.Y);
 
             rc = new Rectangle(new Point(Math.Min((int)DistanceFromLeftEyeToCursor, EyeBallRadius - PupilRadius), 0), new Size(1, 1));
-            if((int.Parse(txtMidSpineZ.Text) > 10) && (int.Parse(txtMidSpineZ.Text) < 30)) {
-                rc.Inflate((int)(PupilRadius * 1.1), (int)(PupilRadius * 1.1));
-            }
-            else if ((int.Parse(txtMidSpineZ.Text) > 30) && (int.Parse(txtMidSpineZ.Text) < 50))
-            {
-                rc.Inflate((int)(PupilRadius * 1.2), (int)(PupilRadius * 1.2));
-            }
-            else if ((int.Parse(txtMidSpineZ.Text) > 50) && (int.Parse(txtMidSpineZ.Text) < 80))
-            {
-                rc.Inflate((int)(PupilRadius * 1.3), (int)(PupilRadius * 1.3));
-            }
-            else if ((int.Parse(txtMidSpineZ.Text) > 80) && (int.Parse(txtMidSpineZ.Text) < 110))
-            {
-                rc.Inflate((int)(PupilRadius * 1.4), (int)(PupilRadius * 1.4));
-            }
-            else
-            {
-                rc.Inflate((int)(PupilRadius * 1.5), (int)(PupilRadius * 1.5));
-            }
+
             rc.Inflate(PupilRadius, PupilRadius);
             e.Graphics.TranslateTransform(LeftEyeCenter.X, LeftEyeCenter.Y);
             e.Graphics.RotateTransform((float)angleLeft);
