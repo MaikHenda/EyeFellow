@@ -16,6 +16,10 @@ Een projector is alleen nodig wanneer U de EyeFellow groot wilt weergeven op bij
 Maik Henckens - Initial work - Maik Henckens
 
 ## Acknowledgments
-YouTube tutorials
-Online articles
+Draw Tutorial C#
+https://www.youtube.com/watch?v=PRpYDTegGyo
+StackOverflow Tutorial Draw Eyes
+https://stackoverflow.com/questions/31487029/making-eyeball-look-at-follow-cursor-movement-c
+Kinect & C#
+https://docs.microsoft.com/en-us/archive/msdn-magazine/2012/june/kinect-starting-to-develop-with-kinect
 
