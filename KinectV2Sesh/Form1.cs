@@ -26,6 +26,7 @@ namespace KinectV2Sesh
         public Form1()
         {
             InitializeComponent();
+            Cursor.Hide();
             this.pictureBox1.Paint += pictureBox1_Paint;
 
             tmr = new Timer();
@@ -57,6 +58,7 @@ namespace KinectV2Sesh
 
         private void Reader_FrameArrived(object sender, BodyFrameArrivedEventArgs e)
         {
+            //Scanning for Bodies in the Kinect Range
             bool dataReceived = false;
 
             using (BodyFrame bodyFrame = e.FrameReference.AcquireFrame())
@@ -71,7 +73,8 @@ namespace KinectV2Sesh
                     dataReceived = true;
                 }
             }
-
+            
+            //If a body is detected, the tracking of the specific joint starts.
             if (dataReceived)
             {
                 foreach (Body body in bodies)
@@ -81,13 +84,17 @@ namespace KinectV2Sesh
                         IReadOnlyDictionary<JointType, Joint> joints = body.Joints;
                         Dictionary<JointType, Point> jointPoints = new Dictionary<JointType, Point>();
 
+                        //Joint MidSpine is selected
                         Joint midSpine = joints[JointType.SpineMid];
 
+                        //Collecting the data of each position of the MidSpine
                         float ms_distance_x = midSpine.Position.X;
                         float ms_distance_y = midSpine.Position.Y;
                         float ms_distance_z = midSpine.Position.Z;
 
                         float distanceX = (ms_distance_x + 1) * 960;
+
+                        //Setting a constant Y value, considering the shocks in the eye for every step set.
                         float distanceY = 580;
 
                         txtMidSpineX.Text = ms_distance_x.ToString("#.##");
@@ -95,6 +102,7 @@ namespace KinectV2Sesh
                         txtMidSpineZ.Text = ms_distance_z.ToString("#.##");
 
                         tbDisX.Text = distanceX.ToString();
+
 
                         Cursor.Position = new Point((int)distanceX, (int)distanceY);
 
@@ -109,6 +117,7 @@ namespace KinectV2Sesh
 
         void pictureBox1_Paint(object sender, PaintEventArgs e)
         {
+            //Setting the visual radius of the eye
             Point center = new Point((int)(pictureBox1.ClientSize.Width / 1.1450), pictureBox1.ClientSize.Height / 2);
             Point LeftEyeCenter = new Point(center.X - EyeBallRadius - (DistanceBetweenEyes / 1), center.Y);
 
@@ -117,6 +126,7 @@ namespace KinectV2Sesh
             rc.Inflate(EyeBallRadius, EyeBallRadius);
             //e.Graphics.DrawEllipse(Pens.Black, rc);
 
+            //Creating the pupil of the Eye
             Point curPos = pictureBox1.PointToClient(Cursor.Position);
             Double DistanceFromLeftEyeToCursor = getDistance(LeftEyeCenter.X, LeftEyeCenter.Y, curPos.X, curPos.Y);
             double angleLeft = getAngleInDegrees(LeftEyeCenter.X, LeftEyeCenter.Y, curPos.X, curPos.Y);
