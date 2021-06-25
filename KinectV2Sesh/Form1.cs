@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Drawing.Imaging;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -137,59 +138,89 @@ namespace KinectV2Sesh
             if (!string.IsNullOrEmpty(txtMidSpineZ.Text))
             {
                 int midSpineZ = Convert.ToInt32(Convert.ToDecimal(txtMidSpineZ.Text));
-                if ((midSpineZ > 1) && (midSpineZ < 2))
+                if ((midSpineZ > 0) && (midSpineZ < 0.6))
                 {
                     rc.Inflate((int)(PupilRadius * 1.1), (int)(PupilRadius * 1.1));
                 }
-                else if ((midSpineZ > 2) && (midSpineZ < 3))
+                else if ((midSpineZ > 0.6) && (midSpineZ < 0.9))
                 {
                     rc.Inflate((int)(PupilRadius * 1.2), (int)(PupilRadius * 1.2));
                 }
-                else if ((midSpineZ > 3) && (midSpineZ < 4))
+                else if ((midSpineZ > 0.9) && (midSpineZ < 1.2))
                 {
                     rc.Inflate((int)(PupilRadius * 1.3), (int)(PupilRadius * 1.3));
                 }
-                else if ((midSpineZ > 4) && (midSpineZ < 5))
+                else if ((midSpineZ > 1.2) && (midSpineZ < 1.8))
                 {
                     rc.Inflate((int)(PupilRadius * 1.4), (int)(PupilRadius * 1.4));
                 }
-            }
-            else
-            {
-                rc.Inflate((int)(PupilRadius * 1.5), (int)(PupilRadius * 1.5));
-            }
+                else if ((midSpineZ > 1.2) && (midSpineZ < 1.5))
+                {
+                    rc.Inflate((int)(PupilRadius * 1.5), (int)(PupilRadius * 1.5));
+                }
+                else if ((midSpineZ > 1.5) && (midSpineZ < 1.8))
+                {
+                    rc.Inflate((int)(PupilRadius * 1.6), (int)(PupilRadius * 1.6));
+                }
+                else if ((midSpineZ > 1.8) && (midSpineZ < 2.1))
+                {
+                    rc.Inflate((int)(PupilRadius * 1.7), (int)(PupilRadius * 1.7));
 
+                }
+                else if ((midSpineZ > 2.1) && (midSpineZ < 2.4))
+                {
+                    rc.Inflate((int)(PupilRadius * 1.8), (int)(PupilRadius * 1.8));
+                }
+
+                else
+                {
+                    rc.Inflate((int)(PupilRadius * 2), (int)(PupilRadius * 2));
+                }
+            }
             //Functie Brightness maken oog op basis van X waarde gebruiker
             if (!string.IsNullOrEmpty(txtMidSpineX.Text))
             {
                 int midSpineX = Convert.ToInt32(Convert.ToDecimal(txtMidSpineX.Text));
-                if (((midSpineX < -0.5) && ((midSpineX > -0.4)) || ((midSpineX < 0.5) && ((midSpineX > 0.4)))))
+                if (((midSpineX < -1) && ((midSpineX > -0.8)) || ((midSpineX < 1) && ((midSpineX > 0.8)))))
                 {
-
+                    pictureBox1.Image = ChangeOpacity(pictureBox1.Image, (float)(0.2));
                 }
-                else if (((midSpineX < -0.5) && ((midSpineX > -0.3)) || ((midSpineX < 0.5) && ((midSpineX > 0.3)))))
+                else if (((midSpineX < -0.8) && ((midSpineX > -0.7)) || ((midSpineX < 0.8) && ((midSpineX > 0.7)))))
                 {
-
+                    pictureBox1.Image = ChangeOpacity(pictureBox1.Image, (float)(0.4));
                 }
-                else if (((midSpineX < -0.5) && ((midSpineX > -0.2)) || ((midSpineX < 0.5) && ((midSpineX > 0.2)))))
+                else if (((midSpineX < -0.7) && ((midSpineX > -0.6)) || ((midSpineX < 0.7) && ((midSpineX > 0.6)))))
                 {
-
+                    pictureBox1.Image = ChangeOpacity(pictureBox1.Image, (float)( 0.6));
                 }
-                else if (((midSpineX < -0.5) && ((midSpineX > -0.1)) || ((midSpineX < 0.5) && ((midSpineX > 0.1)))))
+                else if (((midSpineX < -0.6) && ((midSpineX > -0.3)) || ((midSpineX < 0.6) && ((midSpineX > 0.3)))))
                 {
-
+                    pictureBox1.Image = ChangeOpacity(pictureBox1.Image, (float)(0.8));
+                }
+                else
+                {
+                    pictureBox1.Image = ChangeOpacity(pictureBox1.Image, (float)(1.0));
                 }
             }
-            else
-            {
-
-            }
-            //rc.Inflate(PupilRadius, PupilRadius);
+           
+            //rc.Inflate(PupilRadius, PupilRadius); 
             e.Graphics.TranslateTransform(LeftEyeCenter.X, LeftEyeCenter.Y);
             e.Graphics.RotateTransform((float)angleLeft);
             e.Graphics.FillEllipse(Brushes.Black, rc);
         }
 
+        public static Bitmap ChangeOpacity(Image img, float opacityvalue)
+        {
+            Bitmap bmp = new Bitmap(img.Width, img.Height);
+            Graphics graphics__1 = Graphics.FromImage(bmp);
+            ColorMatrix colormatrix = new ColorMatrix();
+            colormatrix.Matrix33 = opacityvalue;
+            ImageAttributes imgAttribute = new ImageAttributes();
+            imgAttribute.SetColorMatrix(colormatrix, ColorMatrixFlag.Default, ColorAdjustType.Bitmap);
+            graphics__1.DrawImage(img, new Rectangle(0, 0, bmp.Width, bmp.Height), 0, 0, img.Width, img.Height, GraphicsUnit.Pixel, imgAttribute);
+            graphics__1.Dispose();
+            return bmp;
+        }
 
         private Double getDistance(int Ax, int Ay, int Bx, int By)
         {

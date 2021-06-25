@@ -44,32 +44,29 @@
             // 
             // txtMidSpineX
             // 
-            this.txtMidSpineX.Location = new System.Drawing.Point(894, 8);
+            this.txtMidSpineX.Location = new System.Drawing.Point(98, 18);
             this.txtMidSpineX.Name = "txtMidSpineX";
             this.txtMidSpineX.Size = new System.Drawing.Size(100, 20);
             this.txtMidSpineX.TabIndex = 0;
-            this.txtMidSpineX.Visible = false;
             // 
             // txtMidSpineY
             // 
-            this.txtMidSpineY.Location = new System.Drawing.Point(894, 34);
+            this.txtMidSpineY.Location = new System.Drawing.Point(98, 44);
             this.txtMidSpineY.Name = "txtMidSpineY";
             this.txtMidSpineY.Size = new System.Drawing.Size(100, 20);
             this.txtMidSpineY.TabIndex = 1;
-            this.txtMidSpineY.Visible = false;
             // 
             // txtMidSpineZ
             // 
-            this.txtMidSpineZ.Location = new System.Drawing.Point(894, 60);
+            this.txtMidSpineZ.Location = new System.Drawing.Point(98, 70);
             this.txtMidSpineZ.Name = "txtMidSpineZ";
             this.txtMidSpineZ.Size = new System.Drawing.Size(100, 20);
             this.txtMidSpineZ.TabIndex = 2;
-            this.txtMidSpineZ.WordWrap = false;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(843, 11);
+            this.label1.Location = new System.Drawing.Point(47, 21);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(45, 13);
             this.label1.TabIndex = 3;
@@ -79,7 +76,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(843, 37);
+            this.label2.Location = new System.Drawing.Point(47, 47);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(45, 13);
             this.label2.TabIndex = 3;
@@ -89,7 +86,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(843, 63);
+            this.label3.Location = new System.Drawing.Point(47, 73);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(45, 13);
             this.label3.TabIndex = 3;
@@ -109,16 +106,15 @@
             // 
             // tbDisX
             // 
-            this.tbDisX.Location = new System.Drawing.Point(894, 86);
+            this.tbDisX.Location = new System.Drawing.Point(98, 96);
             this.tbDisX.Name = "tbDisX";
             this.tbDisX.Size = new System.Drawing.Size(100, 20);
             this.tbDisX.TabIndex = 5;
-            this.tbDisX.Visible = false;
             this.tbDisX.WordWrap = false;
             // 
             // tbDisY
             // 
-            this.tbDisY.Location = new System.Drawing.Point(894, 112);
+            this.tbDisY.Location = new System.Drawing.Point(98, 122);
             this.tbDisY.Name = "tbDisY";
             this.tbDisY.Size = new System.Drawing.Size(100, 20);
             this.tbDisY.TabIndex = 5;
@@ -126,7 +122,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(812, 89);
+            this.label4.Location = new System.Drawing.Point(16, 99);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(76, 13);
             this.label4.TabIndex = 6;
@@ -139,7 +135,6 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1924, 1061);
-            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
@@ -149,6 +144,7 @@
             this.Controls.Add(this.tbDisY);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.tbDisX);
+            this.Controls.Add(this.pictureBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Form1";
             this.Text = "Form1";
