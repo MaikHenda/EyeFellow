@@ -133,11 +133,63 @@ namespace KinectV2Sesh
 
             rc = new Rectangle(new Point(Math.Min((int)DistanceFromLeftEyeToCursor, EyeBallRadius - PupilRadius), 0), new Size(1, 1));
 
-            rc.Inflate(PupilRadius, PupilRadius);
+            //Functie Groter maken oog op basis van Z waarde gebruiker
+            if (!string.IsNullOrEmpty(txtMidSpineZ.Text))
+            {
+                int midSpineZ = Convert.ToInt32(Convert.ToDecimal(txtMidSpineZ.Text));
+                if ((midSpineZ > 1) && (midSpineZ < 2))
+                {
+                    rc.Inflate((int)(PupilRadius * 1.1), (int)(PupilRadius * 1.1));
+                }
+                else if ((midSpineZ > 2) && (midSpineZ < 3))
+                {
+                    rc.Inflate((int)(PupilRadius * 1.2), (int)(PupilRadius * 1.2));
+                }
+                else if ((midSpineZ > 3) && (midSpineZ < 4))
+                {
+                    rc.Inflate((int)(PupilRadius * 1.3), (int)(PupilRadius * 1.3));
+                }
+                else if ((midSpineZ > 4) && (midSpineZ < 5))
+                {
+                    rc.Inflate((int)(PupilRadius * 1.4), (int)(PupilRadius * 1.4));
+                }
+            }
+            else
+            {
+                rc.Inflate((int)(PupilRadius * 1.5), (int)(PupilRadius * 1.5));
+            }
+
+            //Functie Brightness maken oog op basis van X waarde gebruiker
+            if (!string.IsNullOrEmpty(txtMidSpineX.Text))
+            {
+                int midSpineX = Convert.ToInt32(Convert.ToDecimal(txtMidSpineX.Text));
+                if (((midSpineX < -0.5) && ((midSpineX > -0.4)) || ((midSpineX < 0.5) && ((midSpineX > 0.4)))))
+                {
+
+                }
+                else if (((midSpineX < -0.5) && ((midSpineX > -0.3)) || ((midSpineX < 0.5) && ((midSpineX > 0.3)))))
+                {
+
+                }
+                else if (((midSpineX < -0.5) && ((midSpineX > -0.2)) || ((midSpineX < 0.5) && ((midSpineX > 0.2)))))
+                {
+
+                }
+                else if (((midSpineX < -0.5) && ((midSpineX > -0.1)) || ((midSpineX < 0.5) && ((midSpineX > 0.1)))))
+                {
+
+                }
+            }
+            else
+            {
+
+            }
+            //rc.Inflate(PupilRadius, PupilRadius);
             e.Graphics.TranslateTransform(LeftEyeCenter.X, LeftEyeCenter.Y);
             e.Graphics.RotateTransform((float)angleLeft);
             e.Graphics.FillEllipse(Brushes.Black, rc);
         }
+
 
         private Double getDistance(int Ax, int Ay, int Bx, int By)
         {
